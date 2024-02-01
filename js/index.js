@@ -44,7 +44,7 @@ getButtonFirst.addEventListener("click", (e)=>{
         let getAside = document.querySelector("aside");
 
         getAside.innerHTML = `
-                            <img class="image__aside" src="/assets/Image - Resolvido.png" alt="Ilustração de uma pessoa confusa">
+                            <img class="image__aside" src="assets/Image - Resolvido.png" alt="Ilustração de uma pessoa confusa">
                             <p class="aside__text__first">O input criptrografado é: ${recebeStringCodificada}</p>
         `
     } else {
@@ -91,7 +91,7 @@ getButtonSecond.addEventListener("click", (e)=>{
         let getAside = document.querySelector("aside");
 
         getAside.innerHTML = `
-                            <img class="image__aside" src="/assets/Image - Resolvido.png" alt="Ilustração de uma pessoa confusa">
+                            <img class="image__aside" src="assets/Image - Resolvido.png" alt="Ilustração de uma pessoa confusa">
                             <p class="aside__text__first">O input descriptografado é: ${recebeStringDescodificada}</p>
         `
     } else {
