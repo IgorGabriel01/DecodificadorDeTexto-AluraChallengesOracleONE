@@ -2,6 +2,7 @@ let getButtonFirst = document.getElementById("button__first");
 let getButtonSecond = document.getElementById("button__second__get");
 
 let guardar = [];
+let recebeStringCodificada = "";
 
 getButtonFirst.addEventListener("click", (e)=>{
     let inputReceberValor = document.getElementById("input").value.toLowerCase();
@@ -16,8 +17,6 @@ getButtonFirst.addEventListener("click", (e)=>{
     }
 
     if(validaEntrada == true){
-
-        let recebeStringCodificada = "";
 
         for(i = 0; i < inputReceberValor.length; i++){
             if(inputReceberValor[i] == "a"){
@@ -47,11 +46,15 @@ getButtonFirst.addEventListener("click", (e)=>{
                             <img class="image__aside" src="assets/Image - Resolvido.png" alt="Ilustração de uma pessoa confusa">
                             <p class="aside__text__first">O input criptrografado é: ${recebeStringCodificada}</p>
         `
+        spanError.classList.remove("span__input__error");
+
     } else {
         spanError.classList.add("span__input__error");
         e.preventDefault();
     }
 })
+
+let recebeStringDescodificada = "";
 
 getButtonSecond.addEventListener("click", (e)=>{
     let inputReceberValor = document.getElementById("input").value.toLowerCase();
@@ -66,8 +69,6 @@ getButtonSecond.addEventListener("click", (e)=>{
     }
 
     if(validaEntrada == true){
-        
-        let recebeStringDescodificada = "";
 
         for(j = 0; j < guardar.length; j++){
             if(guardar[j] == "ai"){
@@ -83,10 +84,7 @@ getButtonSecond.addEventListener("click", (e)=>{
             } else {
                 recebeStringDescodificada = recebeStringDescodificada + guardar[j];
             }
-            console.log(recebeStringDescodificada);
         }
-
-        
 
         let getAside = document.querySelector("aside");
 
@@ -94,13 +92,16 @@ getButtonSecond.addEventListener("click", (e)=>{
                             <img class="image__aside" src="assets/Image - Resolvido.png" alt="Ilustração de uma pessoa confusa">
                             <p class="aside__text__first">O input descriptografado é: ${recebeStringDescodificada}</p>
         `
+
+        recebeStringDescodificada = "";
+        recebeStringCodificada = "";
+        guardar = [];
+
+        spanError.classList.remove("span__input__error");
+
     } else {
         spanError.classList.add("span__input__error");
         e.preventDefault();
     }
 })
-
-
-
-
 
